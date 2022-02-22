@@ -1,7 +1,4 @@
-# JavaScript Homework - JavaScript and DOM Manipulation
-<img style= "float:right" width=50% src="UFO-level-1/static/images/nasa.jpg">
-
-<hr></hr>
+# JavaScript Challenge - JavaScript and DOM Manipulation
 
 ## The challenge
 
@@ -34,7 +31,3 @@ so the user can to set multiple filters and search for UFO sightings using the f
   4. `country`
   5. `shape`
 - - -
-
-
-
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.

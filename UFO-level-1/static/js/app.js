@@ -60,7 +60,12 @@ function filterUFO (){
         tableData = data.filter(item => item.datetime == inputDate);
 
         // write number of result found
+        if (tableData.length == 0){
+            d3.select("#search-results").text(`UFO sites not found! Date entered as "${inputDate}" may be invalid`);
+        }
+        else {    
         d3.select("#search-results").text(`Filtered results: ${tableData.length} UFO sites on ${inputDate}`);
+        };
     } 
     else {
         tableData = data;        

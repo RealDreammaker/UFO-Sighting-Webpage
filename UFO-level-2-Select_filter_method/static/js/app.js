@@ -44,30 +44,43 @@ var searchIds = ["#datetime", "#city", "#state", "#country", "#shape"];
 var searchKeys = ["datetime", "city", "state", "country", "shape"];
 
 // get drop down options for all selections
-var dropdownButton;
-var allOptions;
-searchIds.forEach((searchId,searchIndex) => {
-    // initialize the button
-    dropdownButton = d3.select(searchId)
-    .append('select');
-    console.log(`initializing drop down button for: ${searchId}`);
+function renderDropDown(){
+    var dropdownButton;
+    var allOptions;
+    searchIds.forEach((searchId,searchIndex) => {
+        // initialize the button
+        dropdownButton = d3.select(searchId);
+        
+        // clear anything within this element
+        dropdownButton.html("");
+        
+        // add labels and selections
+        dropdownButton
+            .append('label')
+            .text(`${searchKeys[searchIndex]}:`);
+        dropdownButton.append('select');
+        console.log(`initializing drop down button for: ${searchId}`);
 
-    // populate options
-    allOptions= getOptions(searchKeys[searchIndex]);
+        // populate options
+        allOptions= getOptions(searchKeys[searchIndex]);
 
-    // add options to each button
-    dropdownButton
-        .selectAll('myOptions')
-        .data(allOptions)
-        .enter()
-        .append("option")
-        .text(function (d) {return d;})
-        .attr("value", function (d) {return d})
-    });
-
+        // add options to each button
+        dropdownButton
+            .select("select")
+            .selectAll('myOptions')
+            .data(allOptions)
+            .enter()
+            .append("option")
+            .text(function (d) {return d;})
+            .attr("value", function (d) {return d})
+        });
+};
 // ############## LOADING TABLE #################
 // load table with unfiltered data when the page finished loading
-this.onload = renderTable(tableData);
+this.onload = function() {
+    renderTable(tableData);
+    renderDropDown();
+};
 
 // ############## EVENT LISTENER #################
 // listen for events and search through the date/time column to find rows that match user input
@@ -97,21 +110,23 @@ function filterUFO (){
         console.log(`Examining filter criteria : ${searchId}`)
     
         // capture filter criteria from input field
-        var inputValue = d3.select(searchId).select("select").property("value");
+        var inputValue = d3.select(`${searchId}>select`).property("value");
         console.log(`user's input value : ${inputValue}`);
 
         // check for type of button press, if it is clear, empty all filter criteria
         var buttonPressed = d3.select(this);
         if (buttonPressed.text() == "Clear Filter"){
             // clear inputdate
-            console.log("clearing inputdate")
-            inputValue = "";
+            console.log(`clearing input: ${inputValue}`);
+            inputValue = defaultInstruction;
+            console.log(`cleared input: ${inputValue}`);
         ;}
         
         console.log(`Rows before filter: ${tableData.length}`);
     
         // perform filtering data if the input field is not empty nor not chosen
         if (inputValue && inputValue != defaultInstruction) {
+            // filter data based on selected criteria
             tableData = tableData.filter(item => item[searchKeys[index]] == inputValue);
             
             //update search criteria for displaying filter summary on webpage
@@ -137,6 +152,8 @@ function filterUFO (){
     }
     else {
         d3.select("#search-results").text(`Cleared filter!  Total: ${tableData.length} UFO sites`);
+        // refresh dropdown input boxes
+        renderDropDown();
     };
     console.log("--------- FILTER ENDED ------------")
 };
