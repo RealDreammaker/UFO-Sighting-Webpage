@@ -13,6 +13,8 @@ We only use pure `JavaScript`, `HTML`, and `CSS`, and `D3.js` on our web pages.
 
 ## Tasks completed
 
+[UFO sighting](https://realdreammaker.github.io/javascript-challenge/)
+
 ### Level 1: Automatic Table and Date Search 
 
 Write [JavaScript code](UFO-level-1/static/js/app.js) that will listen for events and search through the `date/time` column to find rows that match user input.
