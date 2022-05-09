@@ -8,7 +8,7 @@ This project requires a webpage that allow users to search for UFO sighting base
 
 ## Tasks completed
 Three type of searches are provided to users:
-- [Option 1](UFO-Option-1/static/js/app.js): Automatic Table and Date Search 
+- [Option 1](UFO-Option-1-Date_input_method/static/js/app.js): Automatic Table and Date Search 
 The webpage will listen for events and search through the `date/time` column to find rows that match user input. 
 
 - [Option 2](UFO-Option-2-Input_filter_method/static/js/app.js): Using multiple `input` tags </br>
