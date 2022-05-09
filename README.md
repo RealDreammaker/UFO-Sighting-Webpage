@@ -1,14 +1,14 @@
-# JavaScript Challenge - JavaScript and DOM Manipulation
+# UFO Sighting Webpage
 
-## The challenge
+## Background
 
 The extra-terrestrial menace has come to Earth and we here at `ALIENS-R-REAL` have collected all of the eye-witness reports we could to prove it!
 
 All we need to do now is put this information online for the world to see and then the matter will finally be put to rest.
 
-The task required to write code that will create a table dynamically based upon a [provided dataset](UFO-level-1/static/js/data.js). We also need to allow our users to filter the table data for specific values. 
+The task required to write code that will create a table dynamically based upon a [provided dataset](UFO-level-1/static/js/data.js). Users should also be able to filter the table data for specific values. 
 
-We only use pure `JavaScript`, `HTML`, and `CSS`, and `D3.js` on our web pages.
+Only pure `JavaScript`, `HTML`, and `CSS`, and `D3.js` should be used in this project.
 <hr></hr>
 
 ## Tasks completed
