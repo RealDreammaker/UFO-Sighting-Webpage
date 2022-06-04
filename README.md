@@ -15,5 +15,5 @@ The webpage will listen for events and search through the `date/time` column to 
 - [Option 2](UFO-Option-2-Input_filter_method/static/js/app.js): Using multiple `input` tags </br>
 
 - [Option 3](UFO-Option-3-Select_filter_method/static/js/app.js): Using multiple `select` dropdowns </br>
-For this option a live webpage was deployed on GitHub [UFO finder website](https://realdreammaker.github.io/javascript-challenge/)
+For this option a live webpage was deployed on GitHub [UFO finder website](https://realdreammaker.github.io/UFO-Sighting-Webpage/)
 
