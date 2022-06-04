@@ -4,6 +4,7 @@
 
 This project requires a webpage that allow users to search for UFO sighting based on [provided dataset](UFO-level-1/static/js/data.js).
 
+![UFO screen shot](static/images/webpage.gif)
 <hr></hr>
 
 ## Tasks completed
